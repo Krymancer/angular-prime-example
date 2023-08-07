@@ -4,8 +4,7 @@ import { filter, map } from 'rxjs';
 
 @Component({
   selector: 'app-main-layout',
-  templateUrl: './main-layout.component.html',
-  styleUrls: ['./main-layout.component.css']
+  templateUrl: './main-layout.component.html'
 })
 export class MainLayoutComponent implements OnInit{
   title: String  = '';
@@ -28,11 +27,7 @@ export class MainLayoutComponent implements OnInit{
         return routeTitle;
       })
     )
-    .subscribe((title: string) => {
-      if (title) {
-        this.title = title;
-      }
-    });
+    .subscribe((title: string) => this.title = title);
   }
   
 }
